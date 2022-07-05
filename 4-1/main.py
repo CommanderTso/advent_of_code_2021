@@ -74,18 +74,12 @@ class Board:
             return True
 
     def calculate_score(self, number):
-        print(f"Running calculate score! Number was {number}")
         unmarked_total = 0
-
-        print(self.lines)
-        print(self.hits)
 
         for x in range(len(self.hits)):
             for y in range(len(self.hits[x])):
                 if self.hits[x][y] == 0:
-                    print(f"Got a hit for {x},{y}")
                     unmarked_total += int(self.lines[x][y])
-                    print(f"unmarked_total is now {unmarked_total}")
 
         return unmarked_total * int(number)
 
